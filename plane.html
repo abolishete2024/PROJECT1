@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef5f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #fareDisplay, #paymentStatus {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <a href="index.html"> <h1>Plane Ticket Booking</h1></a>
+        <form id="planeBookingForm">
+            <label for="fromAirport">From:</label>
+            <input type="text" id="fromAirport" name="fromAirport" placeholder="Enter departure airport" required>
+            
+            <label for="toAirport">To:</label>
+            <input type="text" id="toAirport" name="toAirport" placeholder="Enter destination airport" required>
+            
+            <label for="flightDate">Travel Date:</label>
+            <input type="date" id="flightDate" name="flightDate" required>
+            
+            <label for="class">Travel Class:</label>
+            <select id="class" name="class">
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+            </select>
+            
+            <label for="numPassengers">Number of Passengers:</label>
+            <input type="number" id="numPassengers" name="numPassengers" min="1" value="1" required>
+            
+            <button type="button" id="calculateFare">Calculate Fare</button>
+            
+            <p id="fareDisplay"></p>
+            
+            <button type="button" id="proceedPayment" disabled>Proceed to Payment</button>
+        </form>
+
+        <div id="paymentSection" class="hidden">
+            <h2>Payment Gateway</h2>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234-5678-9012-3456" required>
+                
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" required>
+                
+                <button type="button" id="makePayment">Make Payment</button>
+            </form>
+            <p id="paymentStatus"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calculateFareBtn = document.getElementById('calculateFare');
+            const proceedPaymentBtn = document.getElementById('proceedPayment');
+            const makePaymentBtn = document.getElementById('makePayment');
+            const fareDisplay = document.getElementById('fareDisplay');
+            const paymentSection = document.getElementById('paymentSection');
+            const paymentStatus = document.getElementById('paymentStatus');
+            
+            let fare = 0;
+
+            calculateFareBtn.addEventListener('click', () => {
+                const fromAirport = document.getElementById('fromAirport').value;
+                const toAirport = document.getElementById('toAirport').value;
+                const travelClass = document.getElementById('class').value;
+                const numPassengers = document.getElementById('numPassengers').value;
+
+                if (fromAirport && toAirport && numPassengers > 0) {
+                    const baseFare = travelClass === 'economy' ? 5000 : travelClass === 'business' ? 10000 : 15000;
+                    fare = baseFare * numPassengers; // Example fare calculation for plane
+                    fareDisplay.textContent = `Total Fare: ₹${fare}`;
+                    proceedPaymentBtn.disabled = false;
+                } else {
+                    alert("Please fill all the fields correctly!");
+                }
+            });
+
+            proceedPaymentBtn.addEventListener('click', () => {
+                paymentSection.classList.remove('hidden');
+                proceedPaymentBtn.disabled = true;
+            });
+
+            makePaymentBtn.addEventListener('click', () => {
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiryDate = document.getElementById('expiryDate').value;
+                const cvv = document.getElementById('cvv').value;
+
+                if (cardNumber && expiryDate && cvv) {
+                    paymentStatus.textContent = "Payment Successful! Thank you for booking.";
+                    paymentStatus.style.color = 'green';
+                } else {
+                    paymentStatus.textContent = "Payment Failed. Please check your details.";
+                    paymentStatus.style.color = 'red';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

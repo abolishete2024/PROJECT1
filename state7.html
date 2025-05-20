@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Page - Explore</title>
+    <link rel="stylesheet" href="state1.css">
+</head>
+<body>
+
+    <!-- Heading -->
+   <a href="index.html"> <h1 class="main-heading">Welcome to Rajasthan</h1></a>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="text-overlay">
+            Rich History Tells Captivating Tales - <span class="place">Rajasthan</span>
+            </div>
+            <img src="https://media.istockphoto.com/id/805563154/photo/mehrangharh-fort-and-jaswant-thada-mausoleum-in-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=5r9UxPkz9mIkfAIFPLyTwqBQyqSO7mcAdQtcqGHOboA=" alt="Kashmir Image 1">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Tradition and Elegance Shine - <span class="place">Rajasthan</span>
+            </div>
+            <img src="https://c4.wallpaperflare.com/wallpaper/373/217/146/man-made-rajasthan-wallpaper-preview.jpg" alt="Kashmir Image 2">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Festivals Filled with Color And Joy - <span class="place">Rajasthan</span>
+            </div>
+            <img src="https://static.vecteezy.com/system/resources/previews/011/084/232/non_2x/full-picture-of-hawa-mahal-of-rajasthan-photo.jpg" alt="Kashmir Image 3">
+        </div>
+    </div>
+
+    <!-- Dots for slideshow -->
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- Sections for places -->
+    <section class="explore-section">
+        <h2>Explore the Wonders of Rajasthan</h2>
+        <div class="explore-grid">
+            <div class="explore-item">
+                <img src="https://taxirajasthan.in/manage/uploads/news_events/kuZBUyrpHA.jpg" alt="Temple">
+                <h3>Temples</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQsHSbt8OF50-oRxFzdERWt2MD3jj0m8BOdnXkLWTsNkLeVMN3RzPXo06tuU5Y2f_Yv3s&usqp=CAU" alt="Adventure">
+                <h3>Adventure</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://plus.unsplash.com/premium_photo-1661962428918-6a57ab674e23?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFqYXN0aGFufGVufDB8fDB8fHww" alt="Famous Place">
+                <h3>Famous Places</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/09/dc/21/premier-rooms-with-semi.jpg?w=1200&h=-1&s=1" alt="Hotels">
+                <h3>Hotels</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://t3.ftcdn.net/jpg/07/13/45/72/360_F_713457277_xnXFLrOyiI0AdA3x8OIzlOsWZVAybx2f.jpg" alt="Food">
+                <h3>Food</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://plus.unsplash.com/premium_photo-1718146018997-a1059f9f9420?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHww" alt="Tour Guide">
+                <a href="booking1.html"><h3>Tour Guides</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel By Options -->
+    <section class="travel-section">
+        <h2>Travel by</h2>
+        <div class="travel-grid">
+            <div class="travel-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/9/859/737/train-canada-landscape-mountains-wallpaper-preview.jpg" alt="Train">
+                <a href="train.html"> <h3>Train</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://img.freepik.com/premium-photo/onward-journey-bus-cruising-road-travel-time-scenery_896558-3105.jpg" alt="Bus">
+                <a href="bus.html"> <h3>Bus</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://images.all-free-download.com/images/thumbjpg/airbus_hd_photo_1_168573.jpg" alt="Flight">
+                <a href="plane.html"> <h3>Flight</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS for slideshow -->
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+    
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    } setTimeout(() => {
+        const textOverlay = document.querySelector('.text-overlay');
+        textOverlay.style.color = '#1e1238'; // Change to new color (e.g., tomato)
+    }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styling */
+header {
+    background-color: #333;
+    padding: 2rem;
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #2a8d28;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styling */
+.dropbtn {
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 80px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 3px 6px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #acd9f3;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Animation for dropdown appearance */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Video section styling */
+.video-section {
+    position: relative;
+    height: 95vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+.slider {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+.content-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content-overlay h2 {
+    font-size: 1.5rem;
+}
+.change_content:after {
+    content: "";
+    animation: changetext 20s infinite linear;
+    color: #cde845;
+  }
+  
+  @keyframes changetext {
+    0% {
+        content: "Kashmir";
+    }
+    10% {
+        content: "Maharashtra";
+    }
+    20% {
+        content: "Karnataka";
+    }
+    30% {
+        content: "Uttarakhand";
+    }
+    40% {
+        content: "Delhi";
+    }
+    50% {
+        content: "Gujrat";
+    }
+    60% {
+        content: "Rajasthan";
+    }
+    70% {
+        content: "Punjab";
+    }
+    80% {
+        content: "Himachal ";
+    }
+    90% {
+        content: "Madhya Pradesh";
+    }
+    100% {
+        content: "Kashmir"; /* Loop back to the start */
+    }
+}
+
+/* Section styling */
+.states, .new-trips, .travel-options {
+    padding: 0.3rem 0; /* Reduced padding */
+    background-color: #fff;
+    text-align: center;
+}
+
+.states h2, .new-trips h2, .travel-options h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.state-options, .trip-options, .options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Reduced gap between items */
+    padding: 2rem;
+}
+
+.state, .trip, .option {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.state img, .trip img, .option img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.state h3, .trip h3, .option h3 {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.state p, .trip p, .option p {
+    padding: 0 1rem 1rem;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+.state:hover, .trip:hover, .option:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+    nav {
+        right: 0;
+        top: 0;
+        padding-right: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .content-overlay h2 {
+        font-size: 1rem;
+    }
+
+    .state img, .trip img, .option img {
+        height: 150px;
+    }
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Individual images in the slider */
+.slider img {
+    width: 100%;
+    display: none;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: scale(0.9); /* Slightly zoomed out for pop-up effect */
+    opacity: 0; /* Invisible initially */
+}
+
+/* Active image in the slider */
+.slider img.active {
+    display: block;
+    transform: scale(1); /* Pop-up effect on active image */
+    opacity: 1; /* Visible */
+}
+
+/* Adding fade-in animation */
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation for image */
+.slider img.active {
+    animation: fade 1s ease-in-out;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    background-color: rgb(237, 244, 250);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-left {
+    flex: 1;
+}
+
+.about-left img {
+    width: 100%;
+    height: 100%;
+    object-fit:unset;
+}
+
+.about-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.about-right h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-right p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.about-right strong {
+    color: #333;
+}
+/* Pop-up Styles */
+.popup, .footer-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content, .footer-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 500px;
+    width: 80%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.about-right:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0b3d4a;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    color: #ffcd00;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcd00;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcd00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-column {
+    margin: 20px; /* Space between columns */
+}
+
+/* Specific spacing for about and quick links sections */
+.about-section {
+    margin-bottom: 20px; /* Space below the About Us section */
+}
+
+.quick-links-section {
+    margin-top: 20px; /* Space above the Quick Links section */
+}

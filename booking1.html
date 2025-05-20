@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Nomad Adventures - Booking Form</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+}
+
+header {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+header h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #333;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+}
+
+.form-section {
+    width: 60%;
+    padding-right: 20px;
+
+}
+
+.details-section {
+    width: 35%;
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.details-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.details-section p{
+    padding: 10px;
+    padding-left: 0%;
+}
+.tour-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.payment-details {
+    display: block;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.login-text {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: #888;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.login-text a {
+    color: #555;
+    text-decoration: underline;
+}
+
+form label {
+    font-size: 0.9rem;
+    color: #333;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #aaa;
+}
+
+.book-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.book-button:hover {
+    background-color: #333;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Wanderlust Travels</h2>
+    </header>
+
+    <div class="content">
+        <div class="form-section">
+            <h2>Tell us a bit about yourself</h2>
+            <p class="login-text">Already have an account? <a href="login.html">Log in</a> for faster booking.</p>
+            
+            <form id="bookingForm">
+                <label for="name">Name *</label>
+                <input type="text" id="name" maxlength="100" placeholder="Name" required>
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="Email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Phone Number">
+
+                <label for="message">Add Your Message</label>
+                <textarea id="message" rows="4" placeholder="Add Your Message"></textarea>
+
+               
+            </form>
+        </div>
+
+        <div class="details-section">
+            <h3>Booking details</h3>
+            <h3>Kashmir Tour</h3>
+            <p class="tour-details">November 1, 2024 at 10:00 am</p>
+            <p class="tour-details">Staff Member #1</p>
+            <p class="tour-details">3 hr</p>
+            <div class="payment-details">
+                <p>Payment details</p></br>
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <span>Total</span>
+                    <span style="margin-left: auto;">$65</span>
+                </div>
+                <div style="margin-top: 5px;">
+                   
+                </div>
+               
+            
+                <form>
+                    <button type="submit" class="book-button"><a href="paymentgateway.html">Book Now</button></a>
+                </form>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>

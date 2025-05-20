@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Registration</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box animate-box"> <!-- Added animation class here -->
+            <a href="index.html"><h2 class="animate-text">Register to Explore</h2></a>
+            <form method="post" action="register.php">
+                <div class="input-group animate-input">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group animate-input">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-group animate-input">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit" class="animate-btn">Register</button>
+                </div>
+              
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var password = document.getElementById("email").value;
+
+            if (username === "") {
+                alert("Please enter your username.");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

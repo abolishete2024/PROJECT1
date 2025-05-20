@@ -1,0 +1,187 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: gradientShift 10s ease infinite; /* Background animation */
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    }
+    50% {
+        background: linear-gradient(135deg, #ACB6E5, #f0f8ff);
+    }
+    100% {
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-box {
+    background: #f0f8ff; /* Light color for the container */
+    padding: 80px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    text-align: center;
+    width: 400px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 1s ease; /* Transition for the animation */
+}
+
+.login-box.animate-box {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.login-box h2 {
+    color: black;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    color: black;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #d900ff;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label, 
+.input-group input:valid + label {
+    top: -20px;
+    left: 0;
+    font-size: 14px;
+    color: #FFD700;
+}
+
+.submit-btn button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    transform: scale(1);
+}
+
+.submit-btn button:hover {
+    background: #FFA500;
+    transform: scale(1.1); /* Button hover animation */
+}
+
+.signup-link {
+    color: black;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+    color: #FFA500;
+}
+
+.animate-btn {
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-input {
+    opacity: 0;
+    animation: fadeSlideIn 1s forwards ease-in-out;
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-link {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Page - Explore</title>
+    <link rel="stylesheet" href="state1.css">
+</head>
+<body>
+
+    <!-- Heading -->
+   <a href="index.html"> <h1 class="main-heading">Welcome to Gujrat</h1></a>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Dazzling Celebration Of Life - <span class="place">Gujrat</span>
+            </div>
+            <img src="https://www.voguetourism.com/wp-content/uploads/2023/09/Charming-Gujarat_1.jpg" alt="Kashmir Image 1">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Fascinating and Inspirational History - <span class="place">Gujrat</span>
+            </div>
+            <img src="https://www.namasteindiatrip.com/wp-content/uploads/2019/08/Gujarat-Travel-HD.jpg" alt="Kashmir Image 2">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Coastline is Breathtaking and Serene - <span class="place">Gujrat</span>
+            </div>
+            <img src="https://t4.ftcdn.net/jpg/02/85/18/33/360_F_285183364_sUigJL5w0RbZ88EiVWg4XWbEKjgDOBP6.jpg" alt="Kashmir Image 3">
+        </div>
+    </div>
+
+    <!-- Dots for slideshow -->
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- Sections for places -->
+    <section class="explore-section">
+        <h2>Explore the Wonders of Gujrat</h2>
+        <div class="explore-grid">
+            <div class="explore-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/70/158/561/religious-wallpaper-preview.jpg" alt="Temple">
+                <h3>Temples</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.seawatersports.com/images/activies/slide/paragliding-in-gujarat-price-cost.jpg" alt="Adventure">
+                <h3>Adventure</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://ihplb.b-cdn.net/wp-content/uploads/2017/02/vijay-vilas-palace-in-mandvi.jpg" alt="Famous Place">
+                <h3>Famous Places</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://res.cloudinary.com/simplotel/image/upload/w_5000,h_3333/x_0,y_260,w_5000,h_2813,r_0,c_crop,q_80,fl_progressive/w_900,f_auto,c_fit/vikrama-sarovar-portico-pavagadh/HERO_IMAGE_2_c4b2i6" alt="Hotels">
+                <h3>Hotels</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.rajbhog.com/wp-content/uploads/2021/01/Delights-From-The-Land-Of-Gujarat-870x635.jpg" alt="Food">
+                <h3>Food</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://plus.unsplash.com/premium_photo-1718146018997-a1059f9f9420?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHww" alt="Tour Guide">
+                <a href="booking1.html"><h3>Tour Guides</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel By Options -->
+    <section class="travel-section">
+        <h2>Travel by</h2>
+        <div class="travel-grid">
+            <div class="travel-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/9/859/737/train-canada-landscape-mountains-wallpaper-preview.jpg" alt="Train">
+                <a href="train.html"> <h3>Train</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://img.freepik.com/premium-photo/onward-journey-bus-cruising-road-travel-time-scenery_896558-3105.jpg" alt="Bus">
+                <a href="bus.html"> <h3>Bus</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://images.all-free-download.com/images/thumbjpg/airbus_hd_photo_1_168573.jpg" alt="Flight">
+                <a href="plane.html"> <h3>Flight</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS for slideshow -->
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+    
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    } setTimeout(() => {
+        const textOverlay = document.querySelector('.text-overlay');
+        textOverlay.style.color = '#1e1238'; // Change to new color (e.g., tomato)
+    }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+</body>
+</html>

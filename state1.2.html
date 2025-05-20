@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventures in Kashmir</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f7;
+        }
+
+        header {
+            background-color: #f3f4f7;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        #adventures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .adventure-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .adventure-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .adventure-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .adventure-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .adventure-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .adventure-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .adventure-info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: #0b3d4a;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            color: #ffcd00;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p {
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffcd00;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #ffffff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffcd00;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-column {
+            margin: 20px;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+        }
+
+        .quick-links-section {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #adventures {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .adventure-card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">  <h1>Adventures in Kashmir</h1></a>
+        <p>Experience thrilling adventures in the scenic landscapes of Kashmir.</p>
+    </header>
+
+    <section id="adventures">
+        <div class="adventure-card">
+            <img src="skiing.jpg" alt="Skiing in Gulmarg">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Gulmarg">Skiing in Gulmarg</a></h2>
+                <p>Gulmarg is famous for its world-class skiing and snowboarding slopes, offering an exhilarating experience amidst snow-covered peaks.</p>
+            </div>
+        </div>
+
+        <div class="adventure-card">
+            <img src="trekking.jpg" alt="Trekking in Pahalgam">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Pahalgam">Trekking in Pahalgam</a></h2>
+                <p>Explore breathtaking trails in Pahalgam, with treks that take you through stunning valleys, rivers, and alpine meadows.</p>
+            </div>
+        </div>
+
+        <div class="adventure-card">
+            <img src="riverrafting.jpg" alt="River Rafting in Sonmarg">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Sonmarg">River Rafting in Sonmarg</a></h2>
+                <p>Experience thrilling river rafting in the fast-flowing rivers of Sonmarg, surrounded by lush green landscapes.</p>
+            </div>
+        </div>
+
+        <div class="adventure-card">
+            <img src="fishing.jpg" alt="Fishing in Lidder River">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Lidder_River">Fishing in Lidder River</a></h2>
+                <p>Enjoy trout fishing in the serene Lidder River, a perfect retreat for those who love the tranquility of nature.</p>
+            </div>
+        </div>
+
+        <div class="adventure-card">
+            <img src="camping.jpg" alt="Camping in Aru Valley">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Aru_Valley">Camping in Aru Valley</a></h2>
+                <p>Camp under the starry skies in Aru Valley, a picturesque spot with vast meadows and breathtaking mountain views.</p>
+            </div>
+        </div>
+
+        <div class="adventure-card">
+            <img src="paragliding.jpg" alt="Paragliding in Srinagar">
+            <div class="adventure-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Srinagar">Paragliding in Srinagar</a></h2>
+                <p>Take to the skies with paragliding adventures in Srinagar, offering stunning aerial views of the city's lakes and landscapes.</p>
+            </div>
+        </div>
+   
+
+    <div class="adventure-card">
+        <img src="mountainbiking.jpg" alt="Mountain Biking in Kashmir Valley">
+        <div class="adventure-info">
+            <h2><a href="https://en.wikipedia.org/wiki/Kashmir_Valley">Mountain Biking in Kashmir Valley</a></h2>
+            <p>Embark on thrilling mountain biking trails across Kashmir Valley, navigating rugged terrains and scenic paths.</p>
+        </div>
+    </div>
+
+    <div class="adventure-card">
+        <img src="hotairballoon.jpg" alt="Hot Air Ballooning in Sonmarg">
+        <div class="adventure-info">
+            <h2><a href="https://en.wikipedia.org/wiki/Sonmarg">Hot Air Ballooning in Sonmarg</a></h2>
+            <p>Experience a serene hot air balloon ride in Sonmarg, with panoramic views of lush valleys and the Himalayas.</p>
+        </div>
+    </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-column about-section">
+                    <h3>About Us</h3>
+                    <p>At Wanderlust Travels, we are committed to making your journey unforgettable. Whether it’s exotic destinations or adventure-filled experiences, we’re here to guide you through every step.</p>
+                </div>
+
+                <div class="footer-column quick-links-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Destinations</a></li>
+                        <li><a href="#">Tours</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><strong>Address:</strong> 123 Adventure St, Adventure City, USA</p>
+                    <p><strong>Email:</strong> info@wanderlusttravels.com</p>
+                    <p><strong>Phone:</strong> +123 456 789</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust Travels | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

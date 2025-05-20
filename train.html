@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, button {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #fareDisplay, #paymentStatus {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <a href="index.html"><h1>Train Ticket Booking</h1></a>
+        <form id="trainBookingForm">
+            <label for="start">Starting Station:</label>
+            <input type="text" id="start" name="start" placeholder="Enter starting station" required>
+            
+            <label for="destination">Destination Station:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination station" required>
+            
+            <label for="date">Travel Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+            
+            <button type="button" id="calculateFare">Calculate Fare</button>
+            
+            <p id="fareDisplay"></p>
+            
+            <button type="button" id="proceedPayment" disabled>Proceed to Payment</button>
+        </form>
+
+        <div id="paymentSection" class="hidden">
+            <h2>Payment Gateway</h2>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234-5678-9012-3456" required>
+                
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" required>
+                
+                <button type="button" id="makePayment">Make Payment</button>
+            </form>
+            <p id="paymentStatus"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calculateFareBtn = document.getElementById('calculateFare');
+            const proceedPaymentBtn = document.getElementById('proceedPayment');
+            const makePaymentBtn = document.getElementById('makePayment');
+            const fareDisplay = document.getElementById('fareDisplay');
+            const paymentSection = document.getElementById('paymentSection');
+            const paymentStatus = document.getElementById('paymentStatus');
+            
+            let fare = 0;
+
+            calculateFareBtn.addEventListener('click', () => {
+                const start = document.getElementById('start').value;
+                const destination = document.getElementById('destination').value;
+                const passengers = document.getElementById('passengers').value;
+
+                if (start && destination && passengers > 0) {
+                    fare = 450 * passengers; // Example fare calculation for train
+                    fareDisplay.textContent = `Total Fare: ₹${fare}`;
+                    proceedPaymentBtn.disabled = false;
+                } else {
+                    alert("Please fill all the fields correctly!");
+                }
+            });
+
+            proceedPaymentBtn.addEventListener('click', () => {
+                paymentSection.classList.remove('hidden');
+                proceedPaymentBtn.disabled = true;
+            });
+
+            makePaymentBtn.addEventListener('click', () => {
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiryDate = document.getElementById('expiryDate').value;
+                const cvv = document.getElementById('cvv').value;
+
+                if (cardNumber && expiryDate && cvv) {
+                    paymentStatus.textContent = "Payment Successful! Thank you for booking.";
+                    paymentStatus.style.color = 'green';
+                } else {
+                    paymentStatus.textContent = "Payment Failed. Please check your details.";
+                    paymentStatus.style.color = 'red';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

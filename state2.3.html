@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Places in Maharashtra</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f7;
+        }
+
+        header {
+            background-color: #f3f4f7;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        #places {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .place-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .place-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .place-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .place-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .place-info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: #0b3d4a;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            color: #ffcd00;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p {
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffcd00;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #ffffff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffcd00;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-column {
+            margin: 20px;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+        }
+
+        .quick-links-section {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #places {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .place-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html"><h1>Famous Places in Maharashtra</h1></a>
+        <p>Discover the beauty and heritage of Maharashtra's top landmarks and attractions.</p>
+    </header>
+
+    <section id="places">
+        <div class="place-card">
+            <img src="https://mediaindia.eu/wp-content/uploads/2020/01/sarang-pande-k3SHcT9zGkE-unsplash-e1578503286127-1200x1134.jpg" alt="Gateway of India">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Gateway_of_India">Gateway of India</a></h2>
+                <p>Located in Mumbai, this iconic monument overlooks the Arabian Sea.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://media.istockphoto.com/id/1287050420/photo/stupa-at-ajanta-caves-near-aurangabad.jpg?s=612x612&w=0&k=20&c=eYDLhYKWV-i9owdQ2IQTcRUTzMh_zB9xq1EeuiThM8s=" alt="Ajanta Caves">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Ajanta_Caves">Ajanta Caves</a></h2>
+                <p>Explore ancient Buddhist caves featuring stunning rock-cut sculptures and paintings.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://lh4.googleusercontent.com/proxy/DeeluYL9Ol-LHdVm4QQ92W3TtCmx-By2Yzx52Bz6RbIsbO9oaUX6KoqGSPogLcWBMb5vopFK0g6PV-V92dPTuNs2A2Azh81SZdZNkfMhg0AezAYMvNW9nWlI-Bkr" alt="Mahabaleshwar">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Mahabaleshwar">Mahabaleshwar</a></h2>
+                <p>Known for its scenic viewpoints, lush greenery, and serene atmosphere.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Z8a6RlsWOof5d-nQwi-nNG3Pcbh1hukvEA&s" alt="Ellora Caves">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Ellora_Caves">Ellora Caves</a></h2>
+                <p>A UNESCO World Heritage Site, these caves showcase Buddhist, Hindu, and Jain temples.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmBlCezFmREi1vB9Ws4aW-NUTSj0piut0AWw&s" alt="Marine Drive">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Marine_Drive">Marine Drive</a></h2>
+                <p>Known as the "Queen's Necklace," this iconic stretch offers mesmerizing sunset views.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9mBP5qD05mBJUlEvaNwldJx4PmV43a8igQQ&s" alt="Raigad Fort">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Raigad_Fort">Raigad Fort</a></h2>
+                <p>A historic fort and former capital of the Maratha Empire, offering panoramic views.</p>
+            </div>
+        </div>
+
+        <div class="place-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm0e3xOAGXI_Hi7erzMnddZt69S5Pjh3BLmg&s" alt="Tadoba">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Tadoba_Andhari_Tiger_Reserve">Tadoba</a></h2>
+                <p>The Tadoba Andhari Tiger Reserve is a wildlife sanctuary in Chandrapur district of Maharashtra state in India.</p>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVz8a6ZnfL_0zWNJ8ulD-sZaK4OTuXpdZd4g&s" alt="Alibagh">
+            <div class="place-info">
+                <h2><a href="https://en.wikipedia.org/wiki/Alibag">Alibagh</a></h2>
+                <p>Alibag, also known as Alibaug ,is a coastal city and a municipal council in Raigad district of Maharashtra, India. </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-column about-section">
+                    <h3>About Us</h3>
+                    <p>At Explore Maharashtra, we aim to showcase the rich cultural heritage and scenic beauty of the state.</p>
+                </div>
+
+                <div class="footer-column quick-links-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Destinations</a></li>
+                        <li><a href="#">Attractions</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><strong>Address:</strong> 123 Heritage Lane, Maharashtra, India</p>
+                    <p><strong>Email:</strong> info@exploremaharashtra.com</p>
+                    <p><strong>Phone:</strong> +91 12345 67890</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Explore Maharashtra | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

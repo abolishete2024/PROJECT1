@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Page</title>
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font size:1.2 rem;
+            margin: 40px 0;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Text overlay on slideshow */
+        .text-overlay {
+            position: absolute;
+            top: 30%;
+            left: 55%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Georgia', serif;
+            z-index: 2;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        /* Dots container */
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Dots */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        /* Beach Image Container */
+        .beach-images {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .beach-container {
+            width: 20%; /* Smaller container width */
+            text-align: center;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .beach-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            aspect-ratio: 1/1; /* Ensures square shape */
+            transition: transform 0.3s ease;
+        }
+
+        .beach-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .beach-name {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight:bolder;
+        }
+
+         /* Travel By Options */
+         .travel-options {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .travel-option {
+            width: 30%;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .travel-option img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .travel-option:hover {
+            transform: scale(1.05);
+        }
+
+        .travel-option .popup {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background-color: #fcf9f9b0;
+            color: rgb(10, 9, 9);
+            font-size: 1.3rem;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+ <a href="index.html"><h1>A city that pulses with energy and endless possibilities</h1></a>
+ <!-- Slideshow -->
+ <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="text-overlay">
+            A place where dreams come alive - <span class="place">City</span>
+        </div>
+        <img src="https://www.nobroker.in/blog/wp-content/uploads/2024/02/cleanest-city-of-india.jpg" alt="Kashmir Image 1">
+    </div>
+    <div class="mySlides fade">
+        <div class="text-overlay">
+            Rich in history and heart - <span class="place">City</span>
+        </div>
+        <img src="https://media.istockphoto.com/id/1215791152/photo/moonrise-over-south-central-mumbai-the-financial-capital-of-india-showing-a-glittering.jpg?s=612x612&w=0&k=20&c=vJB6RQMWZ4D9pZ2Kva7QLLBbcAf8SGrRZ-ehCeR76zw=" alt="Kashmir Image 2">
+    </div>
+    <div class="mySlides fade">
+        <div class="text-overlay">
+            Diverse and welcoming. - <span class="place">City</span>
+        </div>
+        <img src="https://www.teriin.org/sites/default/files/2019-08/indian-cities-og.jpg" alt="Kashmir Image 3">
+    </div>
+</div>
+
+<!-- Dots for slideshow -->
+<div class="dots-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<!-- Beach Images Row -->
+<h1>Explore The Mountains</h1>
+<div class="beach-images">
+    <div class="beach-container">
+        <img src="https://c4.wallpaperflare.com/wallpaper/113/868/982/chhatrapati-shivaji-maharaj-terminus-mumbai-india-wallpaper-preview.jpg" alt="Beach 2">
+        <div class="beach-name">Mumbai City</div>
+    </div>
+    <div class="beach-container">
+        <img src="https://media.istockphoto.com/id/1215274990/photo/high-wide-angle-view-of-charminar-in-the-night.jpg?s=612x612&w=0&k=20&c=byyIjqgbslf-L191n6SJu0s35fvNoVeWsxV5rIPK7Sk=" alt="Beach 2">
+        <div class="beach-name">Hyderabad City</div>
+    </div>
+    <div class="beach-container">
+        <img src="https://t3.ftcdn.net/jpg/03/41/95/04/360_F_341950409_Gq1sN2OqYgRZrUTvPohSmgQVubaqzlA5.jpg" alt="Beach 3">
+        <div class="beach-name">Banglore City</div>
+    </div>
+    <div class="beach-container">
+        <img src="https://static.toiimg.com/thumb/msid-58475411,width-748,height-499,resizemode=4,imgsize-142947/.jpg" alt="Beach 1">
+        <div class="beach-name">Kolkata City</div>
+    </div>
+    <div class="beach-container">
+        <img src="https://d2jdgazzki9vjm.cloudfront.net/tourist-places/images/tourist-places-in-dehradun.jpg" alt="Beach 2">
+        <div class="beach-name">Dehradun City</div>
+    </div>
+    <div class="beach-container">
+        <img src="https://www.justahotels.com/wp-content/uploads/2023/07/Manali-Travel-Guide.jpg" alt="Beach 3">
+        <div class="beach-name">Manali City</div>
+    </div>
+</div>
+
+<!-- Travel By Options -->
+<h1>Travel By Options</h1>
+<div class="travel-options">
+    <div class="travel-option">
+        <img src="https://t4.ftcdn.net/jpg/06/70/45/43/360_F_670454385_6ceOUzEvJDJ7vif8jXTsUjdlcvymee86.jpg" alt="Bus">
+        <div class="popup">Travel by Bus</div>
+    </div>
+    <div class="travel-option">
+        <img src="https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYWlufGVufDB8fDB8fHww" alt="Train">
+        <div class="popup">Travel by Train</div>
+    </div>
+    <div class="travel-option">
+        <img src="https://c4.wallpaperflare.com/wallpaper/951/792/846/aviation-aircraft-flight-sunrise-clouds-sky-white-airplane-wallpaper-preview.jpg" alt="Aeroplane">
+        <div class="popup">Travel by Plane</div>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+    
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+
+</body>
+</html>

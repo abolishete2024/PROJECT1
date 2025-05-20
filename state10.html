@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Page - Explore</title>
+    <link rel="stylesheet" href="state1.css">
+</head>
+<body>
+
+    <!-- Heading -->
+   <a href="index.html"> <h1 class="main-heading">Welcome to Himachal-Pradesh</h1></a>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Paradise Of Breathtaking Mountains - <span class="place">Himachal-Pradesh</span>
+            </div>
+            <img src="https://www.hlimg.com/images/stories/738X538/khajjiar_1427953906m.jpg" alt="Kashmir Image 1">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Natural Beauty is  Truly Mesmerizing- <span class="place">Himachal-Pradesh</span>
+            </div>
+            <img src="https://res.cloudinary.com/chasset/image/upload/c_fill/v1/hbimages/mobile/location/1716620622676-Sangla-Valley-Baspa-Valley-Kinnaur-Himachal-Pradesh.jpg" alt="Kashmir Image 2">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Vibrant Festival Brings Joy - <span class="place">Himachal-Pradesh</span>
+            </div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/33/5f/at-the-time-of-summers.jpg?w=500&h=-1&s=1" alt="Kashmir Image 3">
+        </div>
+    </div>
+
+    <!-- Dots for slideshow -->
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- Sections for places -->
+    <section class="explore-section">
+        <h2>Explore the Wonders of Himachal-Pradesh</h2>
+        <div class="explore-grid">
+            <div class="explore-item">
+                <img src="https://www.revv.co.in/blogs/wp-content/uploads/2020/11/Kaza.jpg" alt="Temple">
+                <h3>Temples</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://blog.weekendthrill.com/wp-content/uploads/2017/12/9.png" alt="Adventure">
+                <h3>Adventure</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/03/Manali-Zorbing.jpg?resize=800%2C535&ssl=1" alt="Famous Place">
+                <h3>Famous Places</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://images.herzindagi.info/image/2020/Sep/heritage-hotels-himachal-main.jpg" alt="Hotels">
+                <h3>Hotels</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2022/07/600X400-Food-Banner-min.jpg" alt="Food">
+                <h3>Food</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://plus.unsplash.com/premium_photo-1718146018997-a1059f9f9420?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHww" alt="Tour Guide">
+                <h3>Tour Guides</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel By Options -->
+    <section class="travel-section">
+        <h2>Travel by</h2>
+        <div class="travel-grid">
+            <div class="travel-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/9/859/737/train-canada-landscape-mountains-wallpaper-preview.jpg" alt="Train">
+                <h3>Train</h3>
+            </div>
+            <div class="travel-item">
+                <img src="https://img.freepik.com/premium-photo/onward-journey-bus-cruising-road-travel-time-scenery_896558-3105.jpg" alt="Bus">
+                <h3>Bus</h3>
+            </div>
+            <div class="travel-item">
+                <img src="https://images.all-free-download.com/images/thumbjpg/airbus_hd_photo_1_168573.jpg" alt="Flight">
+                <h3>Flight</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS for slideshow -->
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+    
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    } setTimeout(() => {
+        const textOverlay = document.querySelector('.text-overlay');
+        textOverlay.style.color = '#1e1238'; // Change to new color (e.g., tomato)
+    }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+</body>
+</html>

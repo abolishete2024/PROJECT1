@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu with Animation</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  display: inline-block;
+}
+
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+  transform: translateY(-5px);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  text-align: left;
+  padding: 10px;
+  min-width: 200px;
+  border-radius: 5px;
+}
+
+.submenu-item {
+  position: relative;
+}
+
+.submenu-item a {
+  padding: 10px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.submenu-item a:hover {
+  background-color: #555;
+  transform: translateX(10px);
+}
+
+.deep-menu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #444;
+  padding: 10px;
+  min-width: 150px;
+  border-radius: 5px;
+}
+
+.submenu-item:hover .deep-menu {
+  display: block;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.submenu-item:hover .submenu-item a {
+  animation: slideIn 0.4s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item"><a href="#">Destinations</a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#">Kashmir</a>
+            <div class="deep-menu">
+              <a href="#">Explore Kashmir</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Maharashtra</a>
+            <div class="deep-menu">
+              <a href="#">Explore Maharashtra</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Delhi</a>
+            <div class="deep-menu">
+              <a href="#">Explore Delhi</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Punjab</a>
+            <div class="deep-menu">
+              <a href="#">Explore Punjab</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Gujarat</a>
+            <div class="deep-menu">
+              <a href="#">Explore Gujarat</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Rajasthan</a>
+            <div class="deep-menu">
+              <a href="#">Explore Rajasthan</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Uttarakhand</a>
+            <div class="deep-menu">
+              <a href="#">Explore Uttarakhand</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Madhya Pradesh</a>
+            <div class="deep-menu">
+              <a href="#">Explore Madhya Pradesh</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Himachal Pradesh</a>
+            <div class="deep-menu">
+              <a href="#">Explore Himachal Pradesh</a>
+            </div>
+          </li>
+          <li class="submenu-item">
+            <a href="#">Karnataka</a>
+            <div class="deep-menu">
+              <a href="#">Explore Karnataka</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  
+</body>
+</html>

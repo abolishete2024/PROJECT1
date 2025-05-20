@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Page - Explore</title>
+    <link rel="stylesheet" href="state1.css">
+</head>
+<body>
+
+    <!-- Heading -->
+   <a href="index.html"> <h1 class="main-heading">Welcome to Karnataka</h1></a>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Perfect Blend Of Culture - <span class="place">Karnataka</span>
+            </div>
+            <img src="https://www.kstdc.co/wp-content/uploads/2019/10/b3n.jpg" alt="Kashmir Image 1">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                A Treasure Trove Of History - <span class="place">Karnataka</span>
+            </div>
+            <img src="https://www.fabhotels.com/blog/wp-content/uploads/2021/01/Karnataka_600x400.jpg" alt="Kashmir Image 2">
+        </div>
+        <div class="mySlides fade">
+            <div class="text-overlay">
+                Land Of Innovations - <span class="place">Karnataka</span>
+            </div>
+            <img src="https://www.skywaytour.com/media/gallery/2023-01-23-12-14-19-bidar.jpg" alt="Kashmir Image 3">
+        </div>
+    </div>
+
+    <!-- Dots for slideshow -->
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- Sections for places -->
+    <section class="explore-section">
+        <h2>Explore the Wonders of Karnataka</h2>
+        <div class="explore-grid">
+            <div class="explore-item">
+                <img src="https://famousastrologycentre.com/wp-content/uploads/2019/05/temple-sightseeing-trip-karnataka.png" alt="Temple">
+              <a href="state3.1.html"> <h3>Temples</h3></a>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.qexperiences.in/blog/wp-content/uploads/2021/07/627750662Barapole_Rafting.jpg" alt="Adventure">
+                <h3>Adventure</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.indiaonlinepages.com/srinagar/gifs/srinagar-city-guide.jpg" alt="Famous Place">
+                <h3>Famous Places</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/151924159_20210504195519.jpg" alt="Hotels">
+                <h3>Hotels</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://static.wixstatic.com/media/4455b9_35b727dd553e4c469fabafc426145379~mv2.jpg/v1/fill/w_780,h_520,al_c,lg_1,q_85/4455b9_35b727dd553e4c469fabafc426145379~mv2.jpg" alt="Food">
+                <h3>Food</h3>
+            </div>
+            <div class="explore-item">
+                <img src="https://plus.unsplash.com/premium_photo-1718146018997-a1059f9f9420?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHww" alt="Tour Guide">
+                <a href="booking1.html"><h3>Tour Guides</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel By Options -->
+    <section class="travel-section">
+        <h2>Travel by</h2>
+        <div class="travel-grid">
+            <div class="travel-item">
+                <img src="https://c4.wallpaperflare.com/wallpaper/9/859/737/train-canada-landscape-mountains-wallpaper-preview.jpg" alt="Train">
+                <a href="train.html"> <h3>Train</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://img.freepik.com/premium-photo/onward-journey-bus-cruising-road-travel-time-scenery_896558-3105.jpg" alt="Bus">
+                <a href="bus.html"> <h3>Bus</h3></a>
+            </div>
+            <div class="travel-item">
+                <img src="https://images.all-free-download.com/images/thumbjpg/airbus_hd_photo_1_168573.jpg" alt="Flight">
+                <a href="plane.html"> <h3>Flight</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS for slideshow -->
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+    
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+    
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    } setTimeout(() => {
+        const textOverlay = document.querySelector('.text-overlay');
+        textOverlay.style.color = '#1e1238'; // Change to new color (e.g., tomato)
+    }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+</body>
+</html>
